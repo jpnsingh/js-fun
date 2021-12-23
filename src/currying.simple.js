@@ -14,9 +14,5 @@
     }
 
     let curriedSum = curry(sum);
-
-    let sumVal = curriedSum(10)(22);
-
-    console.log(sumVal);
-
+    console.log(curriedSum(10)(22));
 })('Simple Curry');
