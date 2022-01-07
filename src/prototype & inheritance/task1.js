@@ -2,11 +2,11 @@
   console.log(info);
 
   let animal = {
-    jumps: null
+    jumps: null;
   };
   let rabbit = {
     __proto__: animal,
-    jumps: true
+    jumps: true;
   };
 
   console.log( rabbit.jumps ); // true
@@ -18,4 +18,4 @@
   delete animal.jumps;
 
   console.log( rabbit.jumps ); // undefined
-})('Task 1');
+})('Prototypal Inheritance: Task 1');
