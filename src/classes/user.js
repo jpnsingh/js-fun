@@ -6,17 +6,24 @@
       this.name = name;
     }
 
-    // NOTE: No comma b/w class methods. Not to be confused with object literals
     sayHi() {
       console.log(`${this.name} says Hi!!`);
+    }
+
+    // NOTE: No comma b/w class methods. Not to be confused with object literals
+    sayBye() {
+      console.log(`${this.name} says Bye!!`);
     }
   }
 
   let user = new User('JPN Singh');
   user.sayHi();
 
+  // instance is an object
+  console.log(`Type of instance user is : ${typeof user}`); // object
+
   // class is a function
-  console.log(typeof User); // function
+  console.log(`Type of clas User is : ${typeof User}`); // function
 
   // ...or, more precisely, the constructor method
   console.log(User === User.prototype.constructor); // true
@@ -34,4 +41,4 @@
       console.log(key);
     }
   }
-})('Working with classes');
+})('Working with classes | Exploring class construct');
