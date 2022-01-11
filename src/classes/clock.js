@@ -21,14 +21,17 @@
         .replace('m', mins)
         .replace('s', secs);
 
+      console.log('function Clock');
       console.log(output);
     }
 
     this.stop = function() {
+      console.log('function Clock');
       clearInterval(timer);
     };
 
     this.start = function() {
+      console.log('function Clock');
       render();
       timer = setInterval(render, 1000);
     };
@@ -36,6 +39,7 @@
   }
 
   let clock = new Clock({template: 'h:m:s'});
+  console.log('function Clock');
   clock.start();
   setTimeout(clock.stop, 5000);
 })('Class Clock | The functional way');
@@ -50,7 +54,7 @@
       this.template = template;
     }
 
-    render = () => {
+    render () {
       let date = new Date();
 
       let hours = date.getHours();
@@ -67,18 +71,23 @@
         .replace('m', mins)
         .replace('s', secs);
 
+      console.log('class Clock');
       console.log(output);
     }
 
-    start = () => {
+    start () {
+      console.log('class Clock');
       this.render();
-      this.timer = setInterval(this.render, 1000);
+      this.timer = setInterval(() => this.render(), 1000);
     }
 
-    stop = () => clearInterval(this.timer);
+    stop () {
+      console.log('class Clock');
+      clearInterval(this.timer);
+    }
   }
 
   let clock = new Clock({template: 'h:m:s'});
   clock.start();
-  setTimeout(clock.stop, 5000);
+  setTimeout(() => clock.stop(), 5000);
 })('Class Clock | The class...ical way');
