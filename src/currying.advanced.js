@@ -3,12 +3,12 @@
 
   function curry(fn) {
     let arity = fn.length;
-    return function curried (...args) {
-      if(args.length >= arity) {
-        return fn.apply(this, args);
+    return function curried (...args1) {
+      if(args1.length >= arity) {
+        return fn.apply(this, args1);
       } else {
         return function(...args2) {
-          return curried.apply(this, [...args2, ...args]);
+          return curried.apply(this, [...args1, ...args2]);
         }
       }
     }
