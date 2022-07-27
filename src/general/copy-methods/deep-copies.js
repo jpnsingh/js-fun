@@ -15,7 +15,7 @@
     *                            data structures like lists or trees
     * Built-in types - JSON.stringify will throw if the value contains other
     *                 JS built-ins like Map, Set, Date, RegExp or ArrayBuffer
-    * Funtions - JSON.stringify will quietly ignore functions
+    * Functions - JSON.stringify will quietly ignore functions
     */
   const myDeepCopy = JSON.parse(JSON.stringify(myOriginal));
 
