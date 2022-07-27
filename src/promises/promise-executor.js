@@ -19,7 +19,9 @@
     setTimeout(() => reject(new Error("Whoops!")), 1000);
   });
 
-  promise.then((resolve) => console.log(resolve));
+  promise
+  .then((resolve) => console.log(resolve))
+  .catch(error => console.log(error));
 })('Promise | reject');
 
 (function(info){
